@@ -29,6 +29,7 @@ before_action :move_to_index, except: :index
     if tweet.user_id == currnt_user.id
       tweet.update(tweet_params)
   end
+end
 
 private
 
@@ -41,10 +42,8 @@ private
   end
 
   def move_to_index
-  redirect_to action: :index unless user_signed_in?
+  redirect_to action: "index" unless user_signed_in?
   end
-
-end
 end
 
 
